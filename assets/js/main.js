@@ -12,10 +12,10 @@ $(function(){
 			url: $(this).attr("action"),
 			data: form.serialize(),
 			beforeSuccess: function() {
-				form.find("button").attr("disabled", true);
+				form.find("button").prop("disabled", true);
 			},
 			success: function(json) {
-				form.find("button").attr("disabled", false);
+				form.find("button").prop("disabled", false);
 				if(json.error) {
 					$("#form .note-status").removeClass("invisible").find(".alert").text(json.error);
 				} else{
